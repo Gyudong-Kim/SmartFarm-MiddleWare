@@ -22,26 +22,26 @@ client.on("error", (error) => {
 client.subscribe(topic_list, { qos: 1 });
 
 client.on("message", (topic, message, packet) => {
-    var message = message.toString();
-    filter(topic, message);
+    let json = message.toString();
+    filter(topic, json);
 });
 
-const filter = (topic, message) => {
-    console.info(`Topic => ${topic}\nMessage => ${message}`);
+const filter = (topic, json) => {
+    console.info(`Topic => ${topic}\nMessage => ${json}`);
 
-    message = JSON.parse(message);
+    json = JSON.parse(json);
 
     switch (topic) {
         case TOPIC.NUTRIENT_DATA:
-            dataRepo.insertNutrientDataSet(message);
+            dataRepo.insertNutrientDataSet(json);
             break;
 
         case TOPIC.ENVIRONMENT_DATA:
-            dataRepo.insertEnvironmentDataSet(message);
+            dataRepo.insertEnvironmentDataSet(json);
             break;
 
         case TOPIC.CULTIVATOR_DATA:
-            dataRepo.insertCultivatorDataSet(message);
+            dataRepo.insertCultivatorDataSet(json);
             break;
 
         default:
