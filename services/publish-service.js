@@ -1,5 +1,5 @@
 const constants = require("../common/constants");
-const mqtt = require("./config/mqtt");
+const mqtt = require("../config/mqtt");
 const client = mqtt.client;
 const TOPIC = constants.TOPIC;
 
@@ -10,19 +10,32 @@ const options = {
 
 module.exports = {
     // 양액 제어기
-    nutrientControl: (message) => {
-        client.publish(TOPIC.NUTRIENT_CONTROL, message, options);
+    nutrientControl: (json) => {
+        client.publish(TOPIC.NUTRIENT_CONTROL, JSON.stringify(json), options);
+        console.log(`MQTT Publish => ${JSON.stringify(json)}`);
     },
     // 공기압 발생기
-    airControl: (message) => {
-        client.publish(TOPIC.AIR_CONTROL, message, options);
+    airControl: (json) => {
+        client.publish(TOPIC.AIR_CONTROL, JSON.stringify(json), options);
+        console.log(`MQTT Publish => ${JSON.stringify(json)}`);
     },
     // 조명 제어기
-    ledControl: (message) => {
-        client.publish(TOPIC.LED_CONTROL, message, options);
+    ledControl: (json) => {
+        client.publish(TOPIC.LED_CONTROL, JSON.stringify(json), options);
+        console.log(`MQTT Publish => ${JSON.stringify(json)}`);
     },
     // 환경 제어기
-    environmentControl: (message) => {
-        client.publish(TOPIC.ENVIRONMENT_CONTROL, message, options);
+    environmentControl: (json) => {
+        client.publish(
+            TOPIC.ENVIRONMENT_CONTROL,
+            JSON.stringify(json),
+            options
+        );
+        console.log(`MQTT Publish => ${JSON.stringify(json)}`);
+    },
+    // 비상정지
+    emergencyStop: (json) => {
+        client.publish(TOPIC.EMERGENCY_STOP, JSON.stringify(json), options);
+        console.log(`MQTT Publish => ${JSON.stringify(json)}`);
     },
 };

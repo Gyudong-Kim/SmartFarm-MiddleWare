@@ -26,5 +26,6 @@ module.exports = Object.freeze({
         AIR_CONTROL: "air_control", // 공기압 발생기 (Pub)
         LED_CONTROL: "led_control", // 조명 제어기 (Pub)
         ENVIRONMENT_CONTROL: "environment_control", // 환경 제어기 (Pub)
+        EMERGENCY_STOP: "emergency_stop", // 비상정지 (양액 제어기, 공기압 발생기) (Pub)
     },
 });

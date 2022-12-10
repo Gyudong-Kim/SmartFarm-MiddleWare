@@ -2,8 +2,6 @@ const express = require("express");
 const morgan = require("morgan");
 const controlRouter = require("./routes/control");
 const app = express();
-require("./config/mqtt");
-require("./services/subscribe-service");
 
 app.use(morgan("dev"));
 app.use(express.json());
