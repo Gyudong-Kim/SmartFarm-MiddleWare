@@ -1,11 +1,15 @@
 const moment = require("moment");
 const db = require("../config/database");
-const time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
 
 module.exports = {
     insertNutrientDataSet: async (sensorData) => {
         let conn;
         let pool = db.pool;
+        //let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
+        let time = moment()
+            .tz("Asia/Seoul")
+            .subtract(6, "day")
+            .format("YYYY-MM-DD HH:mm:00");
 
         try {
             console.info(
@@ -29,6 +33,11 @@ module.exports = {
     insertEnvironmentDataSet: async (sensorData) => {
         let conn;
         let pool = db.pool;
+        //let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
+        let time = moment()
+            .tz("Asia/Seoul")
+            .subtract(6, "day")
+            .format("YYYY-MM-DD HH:mm:00");
 
         try {
             console.info(
@@ -57,6 +66,11 @@ module.exports = {
     insertCultivatorDataSet: async (sensorData) => {
         let conn;
         let pool = db.pool;
+        //let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
+        let time = moment()
+            .tz("Asia/Seoul")
+            .subtract(6, "day")
+            .format("YYYY-MM-DD HH:mm:00");
 
         try {
             console.info(
@@ -73,7 +87,7 @@ module.exports = {
             ];
 
             await conn.query(
-                "INSERT INTO environment_data (idx, soil_temp, soil_humi, soil_ec, time) values (?, ?, ?, ?, ?)",
+                "INSERT INTO cultivator_data (idx, soil_temp, soil_humi, soil_ec, time) values (?, ?, ?, ?, ?)",
                 params
             );
         } catch (error) {
