@@ -18,9 +18,13 @@ module.exports = Object.freeze({
     },
 
     TOPIC: {
-        NUTRIENT_DATA: "nutrient_data", // 양액 데이터 (Sub)
-        ENVIRONMENT_DATA: "environment_data", // 환경 데이터 (Sub)
-        CULTIVATOR_DATA: "cultivator_data", // 재배기 데이터 (Sub)
+        HOUSE_NUTRIENT_DATA: "house/nutrient_data", // 양액 데이터 (Sub)
+        HOUSE_ENVIRONMENT_DATA: "house/environment_data", // 환경 데이터 (Sub)
+        HOUSE_CULTIVATOR_DATA: "house/cultivator_data", // 재배기 데이터 (Sub)
+
+        NUTRIENT_DATA: "nutrient_data", // 양액 데이터 (Pub)
+        ENVIRONMENT_DATA: "environment_data", // 환경 데이터 (Pub)
+        CULTIVATOR_DATA: "cultivator_data", // 재배기 데이터 (Pub)
 
         NUTRIENT_CONTROL: "nutrient_control", // 양액 제어기 (Pub)
         AIR_CONTROL: "air_control", // 공기압 발생기 (Pub)
