@@ -7,6 +7,7 @@
 const app = require("../app");
 const debug = require("debug")("smartfarm-middleware:server");
 const http = require("http");
+const cronService = require("../services/cron-service");
 require("dotenv").config();
 
 /**
@@ -88,4 +89,5 @@ function onListening() {
 
     require("../config/mqtt");
     require("../services/subscribe-service");
+    cronService.cron();
 }
