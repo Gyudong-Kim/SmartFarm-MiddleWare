@@ -5,11 +5,7 @@ module.exports = {
     insertNutrientDataSet: async (sensorData) => {
         let conn;
         let pool = db.pool;
-        //let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
-        let time = moment()
-            .tz("Asia/Seoul")
-            .subtract(6, "day")
-            .format("YYYY-MM-DD HH:mm:00");
+        let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
 
         try {
             console.info(
@@ -33,11 +29,7 @@ module.exports = {
     insertEnvironmentDataSet: async (sensorData) => {
         let conn;
         let pool = db.pool;
-        //let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
-        let time = moment()
-            .tz("Asia/Seoul")
-            .subtract(6, "day")
-            .format("YYYY-MM-DD HH:mm:00");
+        let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
 
         try {
             console.info(
@@ -66,11 +58,7 @@ module.exports = {
     insertCultivatorDataSet: async (sensorData) => {
         let conn;
         let pool = db.pool;
-        //let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
-        let time = moment()
-            .tz("Asia/Seoul")
-            .subtract(6, "day")
-            .format("YYYY-MM-DD HH:mm:00");
+        let time = moment().tz("Asia/Seoul").format("YYYY-MM-DD HH:mm:00");
 
         try {
             console.info(
